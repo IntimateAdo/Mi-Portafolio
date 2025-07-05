@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mi Portafolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="Favicon.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+  <header>
+    <h1>Hola, soy Gilberto</h1>
+    <p>Estudiante de Ingeniería de Sistemas | Apasionado por la tecnología</p>
+  </header>
+
+  <section id="sobre-mi">
+    <h2>Sobre mí</h2>
+    <img src="WIN_20250325_22_28_26_Pro.jpg" alt="Foto de Gilberto" width="200" >
+    <p>Soy un desarrollador en formación, aprendiendo a crear sitios web desde cero.</p>
+  </section>
+
+<div class="tarjeta">
+    <h3>Mi Proyecto</h3>
+    <p>Este es mi primer portafolio, donde me doy a conocer como ingeniero en sistemas y practicante de la programacion web</p>
+  </div>
+
+<section id="resumen">
+    <h2>Resumen Profesional</h2>
+    <p>
+      soy Gilberto Canaval, estudiante de Ingeniería de Sistemas con pasión por la tecnología, el desarrollo web y el aprendizaje constante. Tengo conocimientos en HTML, CSS, JavaScript, y actualmente me estoy formando en React.
+       <br><br>
+       Me motiva resolver problemas reales mediante soluciones tecnológicas, construir productos con impacto positivo y seguir creciendo como desarrollador. Estoy abierto a oportunidades de colaboración, aprendizaje y desarrollo profesional.
+    </p>
+</section>
+
+<section id="aporto">
+    <h2>¿Que Aporto?</h2>
+    <ul>
+      <li>🧠 Ganas de aprender y mejorar constantemente</li>
+      <li>🤝 Trabajo en equipo con actitud positiva</li>
+      <li>💪 Constancia para alcanzar objetivos</li>
+      <li>🎯 Enfoque en resultados y solución de problemas</li>
+      <li>📚 Compromiso con el crecimiento profesional</li>
+    </ul>
+</section>
+
+  <section id="habilidades">
+    <h2>Mis habilidades</h2>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Javascript</li>
+        <li>Git y GitHub</li>
+        <li>React (Aprendiendo...)</li>
+    </ul>
+
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <form action="https://formsubmit.co/gilberto.canaval@gmail.com" method="POST">
+      <label for="nombre">Nombre:</label>
+      <input type="text" name="nombre" required><br>
+
+      <label for="email">Correo:</label>
+      <input type="email" name="email" required><br>
+
+      <label for="mensaje">Mensaje:</label><br>
+      <textarea name="mensaje" rows="4" required></textarea><br>
+
+  <!-- Opcionales de seguridad -->
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://tusitio.github.io/tu_repo/gracias.html">
+
+  <button type="submit">Enviar</button>
+  </form>
+  </section>
+  
+
+  <section id="proyectos">
+    <h2>Mis Proyectos</h2>
+
+    <div class="proyectos-container">
+
+    <div class="proyecto">
+      <img src="Proyecto1.png" alt="Captura Proyecto 1">
+      <h3>Calculadora Funcional</h3>
+      <p>Calculadora funcional hecha con HTML, CSS y JavaScript. Permite realizar operaciones básicas con una interfaz amigable.</p>
+      <a href="https://github.com/tuusuario/proyecto1" target="_blank">Ver en GitHub</a>
+    </div>
+
+    <div class="proyecto">
+      <img src="Proyecto2.jpeg" alt="Captura Proyecto 2">
+      <h3>Portafolio Personal</h3>
+      <p>Una interfaz interactiva con formulario y contador, desarrollada mientras aprendía DOM y eventos.</p>
+      <a href="#">Ver más</a>
+    </div>
+
+    <!-- Agregar mas Proyectos -->
+  </section>
+
+<section id="curriculum">
+  <h2>Descargar Curriculum</h2>
+  <p>Haz clic en el boton para ver o descargar mi hoja de vida en PDF</p>
+  <a href="CV-Gilberto-Canaval.pdf" download class="btn-descargar">Descargar CV</a>
+</section>
+
+<section id="redes">
+    <h2>Redes Sociales</h2>
+    <ul>
+        <li><a href="https://github.com/tuusuario" target="_blank">GitHub</a></li>
+        <li><a href="https://linkedin.com/in/tuusuario" target="_blank">LinkedIn</a></li>
+        <li><a href="https://instagram.com/tuusuario" target="_blank">Instagram</a></li>
+    </ul>
+</section>
+
+<section id="contador">
+    <h2>Proyectos Completados</h2>
+    <p id="numero-proyectos">0</p>
+  </section>
+  
+<button onclick="toggleModo()">Cambiar tema</button>
+
+<section id="frase-personal">
+    <blockquote>
+      No se trata solo de programar, sino de crear cosas que ayuden a los demás y me ayuden a crecer como persona.
+      <br>-Gilberto Canaval
+    </blockquote>
+</section>
+
+<footer>
+    <p>© 2025 Gilberto Canaval. Todos los derechos reservados.</p>
+</footer>
+
+<button id="ir-arriba" title="Volver arriba">↑</button>
+
+  <script src="scripts.js"></script>
+
+</body>
+</html>
