@@ -3,23 +3,47 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // FORMULARIO DE CONTACTO
     const form = document.getElementById('form-contacto');
-    const alerta = document.getElementById('alerta');
-    if (form && alerta) {
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
-            const nombre = document.getElementById('nombre').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const mensaje = document.getElementById('mensaje').value.trim();
-            if (nombre === '' || email === '' || mensaje === '') {
-                alerta.textContent = 'Por favor completa todos los campos.';
-                alerta.style.color = 'red';
-                return;
-            }
-            alerta.style.color = 'green';
-            alerta.textContent = 'Mensaje enviado exitosamente (simulado).';
-            form.reset();
-        });
+const alerta = document.getElementById('alerta');
+
+form.addEventListener('submit', async function (e) {
+  e.preventDefault();
+
+  const nombre = document.getElementById('nombre').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const mensaje = document.getElementById('mensaje').value.trim();
+
+  if (!nombre || !email || !mensaje) {
+    alerta.style.color = 'red';
+    alerta.textContent = 'Por favor completa todos los campos.';
+    return;
+  }
+
+  try {
+    const respuesta = await fetch('http://localhost:3000/contacto', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ nombre, email, mensaje })
+    });
+
+    const texto = await respuesta.text();
+
+    if (respuesta.ok) {
+      alerta.style.color = 'green';
+      alerta.textContent = texto;
+      form.reset();
+    } else {
+      alerta.style.color = 'red';
+      alerta.textContent = 'Error al enviar mensaje: ' + texto;
     }
+  } catch (error) {
+    alerta.style.color = 'red';
+    alerta.textContent = 'No se pudo conectar al servidor.';
+    console.error('Error de red:', error);
+  }
+});
+
 
     // BOTÓN "IR ARRIBA"
     const btnArriba = document.getElementById('ir-arriba');
