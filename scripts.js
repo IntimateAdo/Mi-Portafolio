@@ -24,7 +24,11 @@ form.addEventListener('submit', async function (e) {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ nombre, email, mensaje })
+      body: JSON.stringify({
+         nombre: nombre,
+          email: email,
+          mensaje: mensaje
+      })
     });
 
     const texto = await respuesta.text();
