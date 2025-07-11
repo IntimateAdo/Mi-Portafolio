@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel de Mensajes</title>
+    <a><link rel="stylesheet" href="styles.css"></a>
+
+    <style>
+
+        body {
+            font-family: arial, sans-serif;
+            margin: 2rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <h1>MENSAJES DEL FORMULARIO</h1>
+
+    <table id="tabla-mensajes">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>mensaje</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+
+    </table>
+
+    <script>
+        async function cargarMensajes() {
+      try {
+        const res = await fetch('http://localhost:3000/mensajes');
+        const mensajes = await res.json();
+
+        const cuerpoTabla = document.querySelector('#tabla-mensajes tbody');
+        cuerpoTabla.innerHTML = '';
+
+        mensajes.forEach(msg => {
+          const fila = document.createElement('tr');
+          fila.innerHTML = `
+            <td>${msg.id}</td>
+            <td>${msg.nombre}</td>
+            <td>${msg.email}</td>
+            <td>${msg.mensaje}</td>
+          `;
+          cuerpoTabla.appendChild(fila);
+        });
+      } catch (error) {
+        console.error('Error al cargar mensajes:', error);
+        alert('No se pudieron cargar los mensajes.');
+      }
+    }
+
+    cargarMensajes();
+    </script>
+</body>
+</html>
